@@ -1,6 +1,14 @@
 <?php
 $is_auth = rand(0, 1);
-
+function lotCost($value)
+{ 
+	if (ceil($value) <= 1000) {
+      	return ceil($value) . " ₽";
+	} else {
+     	$value = number_format($value, 0, ' ', ' ');
+       	return ($value) . " ₽";
+	}
+};
 $user_name = 'Alexey'; // укажите здесь ваше имя
 $categories = [
 	"Доски и лыжи", "Крепления", "Ботинки", "Одежда", "Инструменты", 
@@ -116,7 +124,7 @@ $ads = [
                     				<div class="lot__state">
                         			<div class="lot__rate">
                             			<span class="lot__amount">Стартовая цена</span>
-                            			<span class="lot__cost"><?=$val['price'];?><b class="rub">р</b></span>
+                            			<span class="lot__cost"><?php echo lotCost(53999)?></span>
                         			</div>
                         			<div class="lot__timer timer">
                             			12:23
