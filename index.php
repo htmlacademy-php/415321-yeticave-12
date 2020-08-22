@@ -2,14 +2,10 @@
 $is_auth = rand(0, 1);
 function lotCost($value)
 { 
-	if (ceil($value) <= 1000) 
-	{
+	if (ceil($value) <= 1000) {
       	return ceil($value) . " ₽";
-	} 
-	else 
-	{
-    
-		$value = number_format($value, 0, ' ', ' ');
+	} else {
+     	$value = number_format($value, 0, ' ', ' ');
        	return ($value) . " ₽";
 	}
 };
